@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery.js"></script>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <title>TP jquery</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formulaire de renseignements</h1>
+        <form>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Renseignez votre profil
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="civility" id="monsieur" value="Monsieur"> Monsieur
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="civility" id="madame" value="Madame"> Madame
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-group" for="name">Nom de famille</label>
+                        <input class="form-control" type="text" id="lastname" name="name" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-group" for="firstName">Prénom</label>
+                        <input class="form-control" type="text" id="firstName" name="firstName" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-group" for="age">Age</label>
+                        <input class="form-control" type="number" id="age" name="age" min="0"/>
+                        <div id="ageVerif"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-group" for="pseudo">Pseudo</label>
+                        <input class="form-control" type="text" id="pseudo" name="pseudo" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-group" for="mdp">Mot de passe</label>
+                        <input class="form-control" type="password" id="mdp" name="mdp" required/>
+                        <div class="mdpVerif"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-group" for="confirmMdp">Confirmez le mot de passe</label>
+                        <input class="form-control" type="password" id="confirmMdp" name="confirmMdp" required/>
+                        <div class="mdpVerif"></div>
+                    </div>
+
+                    <button type="button" id="submit" class="btn btn-primary" value="Envoyer">Submit</button>
+                </div>
+                <div class="panel-footer">
+                    <div id="helloText"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
