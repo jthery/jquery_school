@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <script src="jquery.js"></script>
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -20,67 +21,71 @@
 
 <body>
     <div class="container">
-        <h1>Formulaire de renseignements</h1>
-        <form>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Renseignez votre profil
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="civility" id="monsieur" value="Monsieur"> Monsieur
-                            </label>
+        <div class="row">
+            <!-- Formulaire de renseignenemt à remplir-->
+            <div class="col-md-12">
+                <div class="card" id="d-none-card">
+                    <h3 class="d-block p-2 bg-primary text-white text-center">Formulaire de renseignements</h3>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="civility" id="monsieur" autocomplete="off"
+                                        value="Monsieur">
+                                    Monsieur
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="civility" id="madame" autocomplete="off" value="Madame">
+                                    Madame
+                                </label>
+                            </div>
                         </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="civility" id="madame" value="Madame"> Madame
-                            </label>
+                        <div class="form-group">
+                            <label class="control-group" for="name">Nom de famille</label>
+                            <input class="form-control" type="text" id="lastname" name="name" maxlength="55" required />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-group" for="firstName">Prénom</label>
+                            <input class="form-control" type="text" id="firstName" name="firstName" maxlength="55"
+                                required />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-group" for="age">Age</label>
+                            <input class="form-control" type="number" id="age" name="age" min="1" max="120" />
+                            <div id="ageVerif"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-group" for="pseudo">Pseudo</label>
+                            <input class="form-control" type="text" id="pseudo" name="pseudo" maxlength="24" required />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-group" for="mdp">Mot de passe</label>
+                            <input class="form-control" type="password" id="mdp" name="mdp" maxlength="24" required />
+                            <div class="mdpVerif"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-group" for="confirmMdp">Confirmez le mot de passe</label>
+                            <input class="form-control" type="password" id="confirmMdp" name="confirmMdp" maxlength="24"
+                                required />
+                            <div class="mdpVerif"></div>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" id="submit" class="btn btn-primary" value="Envoyer">Submit</button>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="control-group" for="name">Nom de famille</label>
-                        <input class="form-control" type="text" id="lastname" name="name" required/>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-group" for="firstName">Prénom</label>
-                        <input class="form-control" type="text" id="firstName" name="firstName" required/>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-group" for="age">Age</label>
-                        <input class="form-control" type="number" id="age" name="age" min="0"/>
-                        <div id="ageVerif"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-group" for="pseudo">Pseudo</label>
-                        <input class="form-control" type="text" id="pseudo" name="pseudo" required/>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-group" for="mdp">Mot de passe</label>
-                        <input class="form-control" type="password" id="mdp" name="mdp" required/>
-                        <div class="mdpVerif"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-group" for="confirmMdp">Confirmez le mot de passe</label>
-                        <input class="form-control" type="password" id="confirmMdp" name="confirmMdp" required/>
-                        <div class="mdpVerif"></div>
-                    </div>
-
-                    <button type="button" id="submit" class="btn btn-primary" value="Envoyer">Submit</button>
                 </div>
-                <div class="panel-footer">
-                    <div id="helloText"></div>
+                <!-- Formulaire de renseignement rempli -->
+                <div class="card cardText d-none">
+                    <h3 class="d-block p-2 bg-success text-white text-center">Formulaire complétée avec succès</h3>
+                    <div class="panel-footer card-body d-flex align-items-center justify-content-center">
+                        <div id="helloText" class="text-center"></div>
+                    </div>
                 </div>
             </div>
-        </form>
+            <div class="col-md-12 text-center">
+                <p id="display-error"></p>
+            </div>
+        </div>
     </div>
 </body>
-
 </html>
